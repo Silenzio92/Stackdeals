@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STACKD Blog — Coupon Stacking Guides & Tips</title>
+<meta name="description" content="Free guides on coupon stacking, cashback portals, and the best credit cards for saving money. From the team behind STACKD Newsletter.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;1,9..144,300&display=swap" rel="stylesheet">
+<style>
+  :root { --black: #0a0a08; --cream: #f5f0e8; --yellow: #f5c518; --red: #e8321a; --green: #1a7a4a; --muted: #8a8578; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--black); color: var(--cream); font-family: 'DM Mono', monospace; overflow-x: hidden; }
+
+  /* TICKER */
+  .ticker-wrap { background: var(--yellow); color: var(--black); overflow: hidden; padding: 10px 0; border-bottom: 2px solid var(--black); }
+  .ticker { display: flex; animation: ticker 22s linear infinite; white-space: nowrap; }
+  .ticker span { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; padding: 0 2.5rem; }
+  .ticker span::before { content: "◆  "; color: var(--red); }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* HEADER */
+  header { border-bottom: 1px solid #2a2a26; padding: 1.2rem 2.5rem; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 0.12em; color: var(--yellow); text-decoration: none; }
+  .logo span { color: var(--cream); }
+  .header-right { display: flex; align-items: center; gap: 2rem; }
+  .nav-link { font-size: 0.65rem; letter-spacing: 0.15em; color: var(--muted); text-transform: uppercase; text-decoration: none; transition: color 0.15s; }
+  .nav-link:hover, .nav-link.active { color: var(--cream); }
+  .badge { font-size: 0.65rem; letter-spacing: 0.15em; border: 1px solid var(--muted); padding: 0.3rem 0.8rem; color: var(--muted); text-transform: uppercase; }
+
+  /* BLOG HERO */
+  .blog-hero { padding: 4rem 2.5rem 3rem; max-width: 820px; margin: 0 auto; border-bottom: 1px solid #2a2a26; }
+  .blog-hero-label { font-size: 0.65rem; letter-spacing: 0.2em; color: var(--red); text-transform: uppercase; margin-bottom: 1.2rem; }
+  .blog-hero h1 { font-family: 'Fraunces', serif; font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 700; line-height: 1; letter-spacing: -0.02em; margin-bottom: 1.2rem; }
+  .blog-hero h1 em { font-style: italic; color: var(--yellow); }
+  .blog-hero p { font-size: 0.85rem; color: var(--muted); line-height: 1.7; max-width: 480px; }
+
+  /* FEATURED ARTICLE */
+  .featured { padding: 3rem 2.5rem; max-width: 820px; margin: 0 auto; }
+  .section-label { font-size: 0.65rem; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase; margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: #2a2a26; }
+  .featured-card { border: 1px solid #2a2a26; display: grid; grid-template-columns: 1fr 1fr; transition: background 0.2s; text-decoration: none; }
+  .featured-card:hover { background: #0e0e0c; }
+  .featured-body { padding: 2.5rem; border-right: 1px solid #2a2a26; }
+  .featured-meta { font-size: 0.6rem; letter-spacing: 0.15em; color: var(--red); text-transform: uppercase; margin-bottom: 1rem; }
+  .featured-card h2 { font-family: 'Fraunces', serif; font-size: 1.6rem; font-weight: 300; line-height: 1.2; color: var(--cream); margin-bottom: 1rem; }
+  .featured-card p { font-size: 0.72rem; color: var(--muted); line-height: 1.75; margin-bottom: 1.5rem; }
+  .featured-cta { font-size: 0.65rem; letter-spacing: 0.15em; color: var(--yellow); text-transform: uppercase; }
+  .featured-stat { padding: 2.5rem; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 0.5rem; }
+  .featured-stat .big-num { font-family: 'Bebas Neue', sans-serif; font-size: 5rem; color: var(--yellow); line-height: 1; }
+  .featured-stat .big-label { font-size: 0.65rem; letter-spacing: 0.15em; color: var(--muted); text-transform: uppercase; line-height: 1.6; }
+
+  /* ARTICLE GRID */
+  .articles { padding: 0 2.5rem 4rem; max-width: 820px; margin: 0 auto; }
+  .article-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #2a2a26; border: 1px solid #2a2a26; }
+  .article-card { background: var(--black); padding: 2rem; transition: background 0.2s; text-decoration: none; display: block; }
+  .article-card:hover { background: #111110; }
+  .article-meta { font-size: 0.6rem; letter-spacing: 0.15em; color: var(--red); text-transform: uppercase; margin-bottom: 0.8rem; }
+  .article-card h3 { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 300; color: var(--cream); line-height: 1.3; margin-bottom: 0.6rem; }
+  .article-card p { font-size: 0.68rem; color: var(--muted); line-height: 1.65; }
+  .article-footer { margin-top: 1.2rem; display: flex; justify-content: space-between; align-items: center; }
+  .read-link { font-size: 0.6rem; letter-spacing: 0.12em; color: var(--yellow); text-transform: uppercase; }
+  .read-time { font-size: 0.6rem; color: #3a3a36; }
+
+  /* NEW badge */
+  .new-badge {
+    display: inline-block;
+    background: var(--red);
+    color: var(--cream);
+    font-size: 0.52rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.15rem 0.5rem;
+    margin-left: 0.6rem;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+  }
+
+  /* CTA STRIP */
+  .cta-strip { border-top: 1px solid #2a2a26; border-bottom: 1px solid #2a2a26; padding: 3rem 2.5rem; max-width: 820px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
+  .cta-strip-text h3 { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 300; margin-bottom: 0.4rem; }
+  .cta-strip-text p { font-size: 0.7rem; color: var(--muted); }
+  .btn-sub { background: var(--yellow); color: var(--black); border: none; padding: 0.9rem 1.8rem; font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 0.1em; cursor: pointer; text-decoration: none; white-space: nowrap; transition: background 0.15s; display: inline-block; }
+  .btn-sub:hover { background: #ffd740; }
+
+  /* FOOTER */
+  footer { border-top: 1px solid #2a2a26; padding: 2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.62rem; color: var(--muted); letter-spacing: 0.08em; }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--cream); }
+
+  @media (max-width: 600px) {
+    .featured-card { grid-template-columns: 1fr; }
+    .featured-body { border-right: none; border-bottom: 1px solid #2a2a26; }
+    .article-grid { grid-template-columns: 1fr; }
+    .cta-strip { flex-direction: column; text-align: center; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="ticker-wrap">
+  <div class="ticker">
+    <span>Stack Rakuten + store coupon = 28% off</span>
+    <span>Free guides — no paywall</span>
+    <span>Learn to stack like a pro in 10 minutes</span>
+    <span>169M Americans coupon. The smart ones stack.</span>
+    <span>Only $1/week for the weekly deal digest</span>
+    <span>Stack Rakuten + store coupon = 28% off</span>
+    <span>Free guides — no paywall</span>
+    <span>Learn to stack like a pro in 10 minutes</span>
+    <span>169M Americans coupon. The smart ones stack.</span>
+    <span>Only $1/week for the weekly deal digest</span>
+  </div>
+</div>
+
+<header>
+  <a href="/" class="logo">STACK<span>D</span></a>
+  <div class="header-right">
+    <a href="/blog/" class="nav-link active">Blog</a>
+    <div class="badge">Weekly · $1 / Issue</div>
+  </div>
+</header>
+
+<div class="blog-hero">
+  <p class="blog-hero-label">Free Guides</p>
+  <h1>Stack smarter.<br><em>Save more.</em></h1>
+  <p>Everything you need to know about coupon stacking, cashback portals, and credit card rewards — explained clearly and honestly.</p>
+</div>
+
+<section class="featured">
+  <div class="section-label">Start here</div>
+  <a href="/blog/how-to-stack-coupons.html" class="featured-card">
+    <div class="featured-body">
+      <div class="featured-meta">Beginner's Guide · 8 min read</div>
+      <h2>How to Stack Coupons: The Complete Beginner's Guide</h2>
+      <p>169 million Americans use coupons — but most leave serious money on the table by using only one discount at a time. This guide shows you how to combine multiple savings layers into a single purchase.</p>
+      <div class="featured-cta">Read the guide →</div>
+    </div>
+    <div class="featured-stat">
+      <div class="big-num">46%</div>
+      <div class="big-label">Real savings on<br>a stacked Adidas purchase</div>
+    </div>
+  </a>
+</section>
+
+<section class="articles">
+  <div class="section-label">All articles</div>
+  <div class="article-grid">
+
+    <a href="/blog/savings-of-an-american-family.html" class="article-card">
+      <div class="article-meta">Research · May 26, 2026</div>
+      <h3>$1,465 — What American Families Are Leaving on the Table <span class="new-badge">New</span></h3>
+      <p>The average U.S. household saves $1,465 every year just by couponing. Most families don't come close — not because they don't shop, but because no one showed them how to stack.</p>
+      <div class="article-footer">
+        <span class="read-link">Read →</span>
+        <span class="read-time">5 min read</span>
+      </div>
+    </a>
+
+    <a href="/blog/best-cashback-credit-cards-2026.html" class="article-card">
+      <div class="article-meta">Credit Cards · May 20, 2026</div>
+      <h3>Best Cashback Credit Cards in America 2026</h3>
+      <p>The right credit card is the most powerful layer in any coupon stack. It applies automatically on every purchase — no codes, no portals, no effort.</p>
+      <div class="article-footer">
+        <span class="read-link">Read →</span>
+        <span class="read-time">7 min read</span>
+      </div>
+    </a>
+
+    <a href="/blog/rakuten-vs-topcashback.html" class="article-card">
+      <div class="article-meta">Portal Comparison · May 13, 2026</div>
+      <h3>Rakuten vs TopCashback — Which Portal Saves You More?</h3>
+      <p>We compared both portals across major US retailers. Neither wins across the board — here's when to use each one.</p>
+      <div class="article-footer">
+        <span class="read-link">Read →</span>
+        <span class="read-time">6 min read</span>
+      </div>
+    </a>
+
+    <a href="/blog/how-to-stack-coupons.html" class="article-card">
+      <div class="article-meta">Beginner's Guide · May 06, 2026</div>
+      <h3>How to Stack Coupons: The Complete Beginner's Guide</h3>
+      <p>169M Americans use coupons — but most leave serious money on the table by using only one discount at a time. Learn how to save 40–50% on every purchase.</p>
+      <div class="article-footer">
+        <span class="read-link">Read →</span>
+        <span class="read-time">8 min read</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<div style="max-width:820px; margin: 0 auto;">
+  <div class="cta-strip">
+    <div class="cta-strip-text">
+      <h3>Get the best stacks every Monday.</h3>
+      <p>5 verified deals · step-by-step instructions · $1/week · cancel anytime</p>
+    </div>
+    <a href="https://stackddeals.beehiiv.com/subscribe" class="btn-sub">Subscribe for $1/week →</a>
+  </div>
+</div>
+
+<footer>
+  <div>© 2026 STACKD Newsletter</div>
+  <div><a href="/">Home</a> · <a href="/blog/">Blog</a> · Distributed via Beehiiv</div>
+</footer>
+
+</body>
+</html>
