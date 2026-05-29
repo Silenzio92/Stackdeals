@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Stack Coupons: A Beginner's Guide to Saving More — STACKD</title>
+<meta name="description" content="Learning how different savings methods work together can reduce your total cost significantly. This strategy is commonly called coupon stacking.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;1,9..144,300&display=swap" rel="stylesheet">
+<style>
+  :root { --black: #0a0a08; --cream: #f5f0e8; --yellow: #f5c518; --red: #e8321a; --green: #1a7a4a; --muted: #8a8578; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--black); color: var(--cream); font-family: 'DM Mono', monospace; overflow-x: hidden; }
+
+  .ticker-wrap { background: var(--yellow); color: var(--black); overflow: hidden; padding: 10px 0; border-bottom: 2px solid var(--black); }
+  .ticker { display: flex; animation: ticker 22s linear infinite; white-space: nowrap; }
+  .ticker span { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; padding: 0 2.5rem; }
+  .ticker span::before { content: "◆  "; color: var(--red); }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  header { border-bottom: 1px solid #2a2a26; padding: 1.2rem 2.5rem; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 0.12em; color: var(--yellow); text-decoration: none; }
+  .logo span { color: var(--cream); }
+  .header-right { display: flex; align-items: center; gap: 2rem; }
+  .nav-link { font-size: 0.65rem; letter-spacing: 0.15em; color: var(--muted); text-transform: uppercase; text-decoration: none; transition: color 0.15s; }
+  .nav-link:hover { color: var(--cream); }
+  .badge { font-size: 0.65rem; letter-spacing: 0.15em; border: 1px solid var(--muted); padding: 0.3rem 0.8rem; color: var(--muted); text-transform: uppercase; }
+
+  .article-wrap { max-width: 680px; margin: 0 auto; padding: 4rem 2.5rem 6rem; }
+
+  .breadcrumb { font-size: 0.62rem; letter-spacing: 0.12em; color: var(--muted); text-transform: uppercase; margin-bottom: 2.5rem; }
+  .breadcrumb a { color: var(--muted); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--cream); }
+  .breadcrumb span { margin: 0 0.5rem; }
+
+  .article-meta { display: flex; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+  .article-meta span { font-size: 0.62rem; letter-spacing: 0.12em; color: var(--muted); text-transform: uppercase; }
+  .article-meta .tag { color: var(--red); }
+
+  h1 { font-family: 'Fraunces', serif; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
+  .article-intro { font-size: 0.95rem; line-height: 1.8; color: #c8c3b8; border-left: 2px solid var(--yellow); padding-left: 1.5rem; margin-bottom: 3rem; font-style: italic; }
+
+  .article-body h2 { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 300; color: var(--cream); margin: 3rem 0 1rem; }
+  .article-body h3 { font-family: 'Bebas Neue', sans-serif; font-size: 0.95rem; letter-spacing: 0.12em; color: var(--yellow); margin: 2rem 0 0.75rem; }
+  .article-body p { font-size: 0.82rem; line-height: 1.85; color: #c8c3b8; margin-bottom: 1.2rem; }
+  .article-body strong { color: var(--cream); }
+
+  .bullet-list { margin: 0.5rem 0 1.2rem 0; list-style: none; }
+  .bullet-list li { font-size: 0.78rem; line-height: 1.7; color: #c8c3b8; padding: 0.2rem 0 0.2rem 1.2rem; position: relative; }
+  .bullet-list li::before { content: "→"; color: var(--yellow); position: absolute; left: 0; font-size: 0.7rem; }
+
+  .callout { border: 1px solid #2a2a26; padding: 1.2rem 1.5rem; margin: 2rem 0; }
+  .callout.warning { border-color: var(--red); background: #120808; }
+  .callout.tip { border-color: var(--yellow); background: #0f0e08; }
+  .callout-label { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.6rem; }
+  .callout.warning .callout-label { color: var(--red); }
+  .callout.tip .callout-label { color: var(--yellow); }
+  .callout p { font-size: 0.78rem; line-height: 1.7; color: #c8c3b8; margin: 0; }
+  .callout strong { color: var(--cream); }
+
+  .table-wrap { overflow-x: auto; margin: 2rem 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.75rem; }
+  th { font-family: 'Bebas Neue', sans-serif; font-size: 0.8rem; letter-spacing: 0.1em; color: var(--yellow); background: #111110; padding: 0.8rem 1rem; text-align: left; border-bottom: 1px solid #2a2a26; }
+  td { padding: 0.7rem 1rem; border-bottom: 1px solid #1a1a18; color: #c8c3b8; vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  td:first-child { color: var(--cream); }
+
+  .steps { margin: 1.5rem 0; border: 1px solid #2a2a26; }
+  .step { display: flex; gap: 1.2rem; padding: 0.9rem 1.2rem; border-bottom: 1px solid #1a1a18; align-items: baseline; }
+  .step:last-child { border-bottom: none; }
+  .step-num { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; color: var(--yellow); line-height: 1; min-width: 1.5rem; }
+  .step-body { font-size: 0.78rem; line-height: 1.7; color: #c8c3b8; }
+  .step-body strong { color: var(--cream); }
+
+  .article-cta { border: 1.5px solid var(--yellow); padding: 2rem; margin-top: 4rem; text-align: center; }
+  .article-cta h3 { font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 300; margin-bottom: 0.5rem; }
+  .article-cta p { font-size: 0.72rem; color: var(--muted); margin-bottom: 1.5rem; }
+  .btn-sub { display: inline-block; background: var(--yellow); color: var(--black); padding: 0.9rem 2rem; font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 0.1em; text-decoration: none; transition: background 0.15s; }
+  .btn-sub:hover { background: #ffd740; }
+
+  footer { border-top: 1px solid #2a2a26; padding: 2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.62rem; color: var(--muted); letter-spacing: 0.08em; }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--cream); }
+
+  @media (max-width: 600px) {
+    .article-wrap { padding: 2.5rem 1.5rem 4rem; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="ticker-wrap">
+  <div class="ticker">
+    <span>Stack Rakuten + store coupon = 28% off</span>
+    <span>Honey auto-applies at checkout</span>
+    <span>169M Americans coupon. The smart ones stack.</span>
+    <span>Only $1/week for the weekly deal digest</span>
+    <span>Stack Rakuten + store coupon = 28% off</span>
+    <span>Honey auto-applies at checkout</span>
+    <span>169M Americans coupon. The smart ones stack.</span>
+    <span>Only $1/week for the weekly deal digest</span>
+  </div>
+</div>
+
+<header>
+  <a href="/" class="logo">STACK<span>D</span></a>
+  <div class="header-right">
+    <a href="/blog/" class="nav-link">Blog</a>
+    <div class="badge">Weekly · $1 / Issue</div>
+  </div>
+</header>
+
+<div class="article-wrap">
+
+  <div class="breadcrumb">
+    <a href="/">Home</a><span>›</span><a href="/blog/">Blog</a><span>›</span>Beginner's Guide
+  </div>
+
+  <div class="article-meta">
+    <span class="tag">Beginner's Guide</span>
+    <span>May 06, 2026</span>
+    <span>8 min read</span>
+  </div>
+
+  <h1>How to Stack Coupons: A Beginner's Guide to Saving More</h1>
+
+  <p class="article-intro">Millions of shoppers use coupons and cashback programs every year — but many use only one discount at a time. Learning how different savings methods work together can reduce your total cost significantly. This strategy is commonly called coupon stacking.</p>
+
+  <div class="article-body">
+
+    <h2>What Is Coupon Stacking?</h2>
+    <p>Coupon stacking means combining multiple types of discounts on the same purchase whenever a retailer allows it.</p>
+    <p>Instead of relying on a single 20% discount, you may be able to combine:</p>
+    <ul class="bullet-list">
+      <li>a sale or markdown</li>
+      <li>a promo code</li>
+      <li>a coupon</li>
+      <li>cashback rewards</li>
+      <li>credit card rewards</li>
+    </ul>
+    <p>Not every store allows every combination, but when stacking is possible, the savings can add up.</p>
+
+    <h2>Important: How the Math Actually Works</h2>
+    <p>Discount percentages should be applied one after another, not added together.</p>
+
+    <div class="callout warning">
+      <div class="callout-label">⚠ Important — Honest Math</div>
+      <p>Starting price: <strong>$100</strong><br>
+      Apply a 30% discount → <strong>$70</strong><br>
+      Apply a 20% discount → <strong>$56</strong><br>
+      Final price: <strong>$56 — total savings: 44%, not 50%</strong><br><br>
+      Because each discount applies to the already-reduced amount, percentages compound rather than simply add together.</p>
+    </div>
+
+    <h2>Common Types of Discounts You Can Stack</h2>
+
+    <h3>1. Sale or Markdown</h3>
+    <p>This is the retailer's direct price reduction. Sales are often the first layer because all additional discounts usually apply to the reduced price.</p>
+    <ul class="bullet-list">
+      <li>seasonal sales</li>
+      <li>clearance items</li>
+      <li>holiday promotions</li>
+    </ul>
+
+    <h3>2. Promo Code</h3>
+    <p>Promo codes are entered during checkout and may provide percentage discounts, fixed dollar reductions, or free shipping.</p>
+    <ul class="bullet-list">
+      <li>many stores allow only one promo code per order</li>
+      <li>some codes cannot be combined with other promotions</li>
+    </ul>
+
+    <h3>3. Clip Coupons</h3>
+    <p>Some retailers offer digital coupons that can be activated with a click before purchase. These discounts usually apply automatically at checkout after activation.</p>
+    <ul class="bullet-list">
+      <li>Amazon product coupons</li>
+      <li>Target Circle offers</li>
+      <li>grocery store digital coupons</li>
+    </ul>
+
+    <h3>4. Cashback Rewards</h3>
+    <p>Cashback works differently because the discount often happens after the purchase.</p>
+    <p><strong>Cashback portals</strong> — You start at the cashback platform and then visit the retailer through its link. Examples: Rakuten, TopCashback.</p>
+    <p><strong>Credit card rewards</strong> — These rewards are earned automatically when paying with the eligible card. Examples: rotating category cashback cards, retailer-linked cards, standard cashback cards.</p>
+
+    <h2>Additional Savings Layers That Sometimes Stack</h2>
+    <p>Depending on the retailer, you may also be able to combine:</p>
+    <ul class="bullet-list">
+      <li>loyalty rewards programs</li>
+      <li>store points</li>
+      <li>discounted gift cards</li>
+      <li>student or employee discounts</li>
+      <li>credit card offers</li>
+      <li>manufacturer coupons</li>
+    </ul>
+    <p>Rules vary significantly between retailers.</p>
+
+    <h2>General Guidelines for Stacking Discounts</h2>
+    <p>A common sequence looks like this:</p>
+
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-body">If using a cashback portal, <strong>start there first</strong> so tracking is more likely to work correctly</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-body">Visit the retailer and <strong>shop sale or clearance sections</strong></div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-body"><strong>Activate any available coupons</strong> on the product page</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-body"><strong>Apply an eligible promo code</strong> at checkout</div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-body">Pay with the <strong>credit card that offers the best rewards</strong></div></div>
+    </div>
+
+    <div class="callout tip">
+      <div class="callout-label">💡 Note</div>
+      <p>Cashback tracking can sometimes fail because of unsupported coupon codes, ad blockers, browser extensions, switching devices, or app-to-browser redirects. Always check the portal's terms before purchasing.</p>
+    </div>
+
+    <h2>Example Stack: Adidas Purchase</h2>
+
+    <div class="table-wrap">
+      <table>
+        <tr><th>Step</th><th>Calculation</th><th>Price</th></tr>
+        <tr><td>Original Price</td><td>—</td><td>$110.00</td></tr>
+        <tr><td>Sale −20%</td><td>$110 × 0.80</td><td>$88.00</td></tr>
+        <tr><td>Promo Code −30%</td><td>$88 × 0.70</td><td>$61.60</td></tr>
+        <tr><td>Cashback 4%</td><td>$61.60 × 0.04</td><td>−$2.46 back</td></tr>
+        <tr><td><strong>Effective Price</strong></td><td>—</td><td><strong>~$59.14</strong></td></tr>
+        <tr><td><strong>Real Saving</strong></td><td>—</td><td style="color:#1a7a4a;"><strong>~46% (not 54%)</strong></td></tr>
+      </table>
+    </div>
+
+    <h2>Final Thoughts</h2>
+    <p>Coupon stacking is not about finding one huge discount. It is about combining several smaller savings opportunities where retailer rules allow it.</p>
+    <p>Even modest discounts can become meaningful when layered together:</p>
+    <ul class="bullet-list">
+      <li>sale price</li>
+      <li>coupon</li>
+      <li>promo code</li>
+      <li>cashback</li>
+      <li>rewards card</li>
+    </ul>
+    <p>The biggest savings usually come from consistency rather than a single large coupon.</p>
+
+  </div>
+
+  <div class="article-cta">
+    <h3>Get 5 stacked deals every Monday.</h3>
+    <p>We do the research, verify every deal, and send you the best stacks of the week. One email. One dollar.</p>
+    <a href="https://stackddeals.beehiiv.com/subscribe" class="btn-sub">Subscribe for $1/week →</a>
+  </div>
+
+</div>
+
+<footer>
+  <div>© 2026 STACKD Newsletter</div>
+  <div><a href="/">Home</a> · <a href="/blog/">Blog</a> · stackddeals.com</div>
+</footer>
+
+</body>
+</html>
